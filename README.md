@@ -78,3 +78,24 @@ Each article contains several important properties that you'll need to access:
  * sections (an Array of objects that represent content blocks)
  * subscriberOnly (a Boolean)
 
+### Thumbnail images
+
+A thumbnail image content block should be available as the first element in an article's `sections` array, or the first element that contains an `image` property. The simplified structure of the image content blocks is as below. You can use the `url` property to fetch the image from the server (they should exist on the server, however it's not guaranteed - don't worry if a request fails for an image URL.
+
+```js
+{
+  "image": [
+    {
+      "_id": "61dbaf67a5718d6de843de30",
+      "_storageType": "disk",
+      "contentLength": 323050,
+      "fileName": "hoppy1_copy.jpg",
+      "height": 1592,
+      "mimeType": "image/jpeg",
+      "path": "/media/2022/01/10/hoppy1_copy-1641787239570.jpg",
+      "width": 1400,
+      "url": "https://noble-rot-api.27.works:443/media/2022/01/10/hoppy1_copy-1641787239570.jpg"
+    }
+  ]
+}
+```
