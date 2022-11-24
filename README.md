@@ -6,6 +6,7 @@ Using NextJS, the below outlines what we'd like to see implemented. There's abso
 
 We're not necessarily looking for a complete and polished version of this, it's more about making sure we can understand your intentions from the code and any comments. Imagine that another developer (or yourself in six months) will be picking up from where you finish.
 
+
 1. An article index page which lists the articles (all or some, up to you! ... the API will return ~70 articles).
 2. For each article, render the title and a link using the article's `slug` property, with text "Read more".
 3. If the article is set as `subscriberOnly: false`, the Read More link should be enabled, otherwise it should be disabled (in any way you like... the text could  change to "Log in to Read More" or "Members Only"... whatever you like)
@@ -15,6 +16,10 @@ We're not necessarily looking for a complete and polished version of this, it's 
 ## GitHub
 
 Please fork this repository and submit a pull request to it when you are ready to show off your great work!
+
+## Questions?
+
+Feel free to email Jim! 
 
 ## API Details
 
