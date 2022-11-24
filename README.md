@@ -70,7 +70,8 @@ The response from this endpoint contains an array of articles in the `results` p
 }
 ```
 
-### Article structure
+## Article structure
+
 Each article contains several important properties that you'll need to access:
 
  * title
