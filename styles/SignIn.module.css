@@ -1,0 +1,32 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main input {
+  width: 300px;
+  height: 30px;
+  padding: 12px;
+}
+
+.main button {
+  height: 30px;
+}
+
+.main button:first-child {
+  margin-right: 12px;
+}
+
+.inputGroup {
+  margin: 4px;
+}
+
+.error {
+  margin: 4px;
+  color: red;
+}
