@@ -1,6 +1,6 @@
-import { useRouter } from "next/router"
-
 import { getData } from "../../helper"
+import Loading from "../../components/Loading"
+import { useEffect, useState } from "react"
 
 export const getStaticPaths = async () => {
 	const data = await getData()
@@ -17,15 +17,29 @@ export const getStaticProps = async (context) => {
 	const data = await getData()
 
 	const article = data.results.find((item) => item.slug === articleid)
-	console.log("articleid: ", articleid)
+
 	return { props: { article } }
 }
 
 const ArticleDetails = ({ article }) => {
-	const router = useRouter()
-	const { articleid } = router.query
+	const { title, sections } = article
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		if (article) {
+			setLoading(false)
+		}
+	}, [article])
 	// console.log(router)
-	return <div>Details: {articleid}</div>
+	return loading === true && article !== undefined ? (
+		<Loading />
+	) : (
+		<div>
+			<div>{title}</div>
+			<br />
+			<div>{sections[3].body}</div>
+		</div>
+	)
 }
 
 export default ArticleDetails
