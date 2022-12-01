@@ -1,8 +1,11 @@
+import { useState } from "react"
+import { getData } from "../helper"
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
-import ArticleIndex from "./articles"
+import ArticleIndex from "../components/articles"
 
-export default function Home() {
+export default function Home({ articles }) {
+	const [loggedIn, setLoggedIn] = useState(true)
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -11,7 +14,13 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<ArticleIndex />
+			<ArticleIndex loggedIn={loggedIn} articles={articles} />
 		</div>
 	)
+}
+
+export const getStaticProps = async () => {
+	const articles = await getData()
+
+	return { props: { articles } }
 }

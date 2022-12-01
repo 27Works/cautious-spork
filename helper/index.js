@@ -1,13 +1,12 @@
-const token = process.env.TOKEN
-export const callData = async () => {
+export const getData = async () => {
 	const response = await fetch("https://noble-rot-api.27.works/1.0/posts", {
 		method: "GET",
 		headers: {
-			Authorization: `Bearer ${token}`,
+			Authorization: `Bearer ${process.env.token}`,
 			"Content-Type": "application/json",
 		},
 	})
 
-	return response
+	const data = await response.json()
+	return data
 }
-// console.log(data)
