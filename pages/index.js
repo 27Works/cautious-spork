@@ -6,6 +6,7 @@ import ArticleIndex from "../components/articles"
 
 export default function Home({ articles }) {
 	const [loggedIn, setLoggedIn] = useState(true)
+
 	return (
 		<div className={styles.container}>
 			<Head>
