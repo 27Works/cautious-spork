@@ -1,7 +1,12 @@
 import { useContext, createContext, useState, useEffect } from "react"
-import { initializeApp } from "firebase/app"
-import { getAuth } from "firebase/auth"
-import { firebaseConfig } from "../config/firebaseConfig"
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	onAuthStateChanged,
+	signOut,
+} from "firebase/auth"
+import { auth } from "../config/firebaseConfig"
+
 const AuthContext = createContext()
 
 export const useAuth = () => {
@@ -9,35 +14,53 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }) => {
+	console.log("auth", auth)
+	const [open, setOpen] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [currentUser, setCurrentUser] = useState()
-	const app = initializeApp(firebaseConfig)
-	const auth = getAuth(app)
+
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			setCurrentUser(user)
 			setLoading(false)
 		})
-
 		return unsubscribe
 	}, [])
 
 	const login = (email, password) => {
-		return auth.signInWithEmailAndPassword(email, password)
+		return signInWithEmailAndPassword(auth, email, password)
 	}
 	const signUp = (email, password) => {
-		return auth.createUserWithEmailAndPassword(email, password)
+		return createUserWithEmailAndPassword(auth, email, password)
 	}
 
-	const signOut = () => {
-		return auth.signOut()
+	const logOut = () => {
+		return signOut(auth)
 	}
 
 	const getUser = () => {
 		return auth.currentUser
 	}
 
-	const value = { loading, currentUser, getUser, login, signUp, signOut }
+	const handleOpen = () => {
+		setOpen(true)
+	}
+
+	const handleClose = () => {
+		setOpen(false)
+	}
+
+	const value = {
+		loading,
+		currentUser,
+		getUser,
+		login,
+		signUp,
+		logOut,
+		handleOpen,
+		handleClose,
+		open,
+	}
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 

@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css"
 import ArticleIndex from "../components/articles"
 
 export default function Home({ articles }) {
-	const [loggedIn, setLoggedIn] = useState(true)
+	const [loggedIn, setLoggedIn] = useState(false)
 
 	return (
 		<div className={styles.container}>

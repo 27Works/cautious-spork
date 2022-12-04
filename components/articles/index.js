@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import ArticleList from "./ArticleList"
 import Pagination from "@mui/material/Pagination"
 import Loading from "../Loading"
+import cardStyle from "./styles/cardStyle.module.css"
+import LoginModal from "../login/LoginModal"
 
 const ArticleIndex = ({ articles, loggedIn }) => {
 	// const [articles, setArticles] = useState([])
-	const [error, setError] = useState(false)
+	// const [error, setError] = useState(false)
 	const [loading, setLoading] = useState(true)
 	const [currentPage, setCurrentPage] = useState(1)
 	const [articlesPerPage, setArticlesPerPage] = useState(10)
@@ -16,8 +18,8 @@ const ArticleIndex = ({ articles, loggedIn }) => {
 		indexOfFirstArticle,
 		indexOfLastArticle
 	)
-	console.log(articles)
-	const handleChange = (value) => {
+
+	const handleChange = (e, value) => {
 		setCurrentPage(value)
 	}
 	useEffect(() => {
@@ -30,13 +32,15 @@ const ArticleIndex = ({ articles, loggedIn }) => {
 	return (
 		<div>
 			<h1>Articles:</h1>
-			<div>
+			<div className={cardStyle.listContainer}>
 				{loading && articles ? (
 					<Loading />
 				) : (
 					<>
+						<LoginModal />
 						<ArticleList articles={currentArticles} loggedIn={loggedIn} />
 						<Pagination
+							className={cardStyle.pagination}
 							count={Math.ceil(articles.results.length / articlesPerPage)}
 							onChange={handleChange}
 						/>

@@ -1,0 +1,36 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  background-color: black;
+}
+
+.items {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.items li {
+  align-self: center;
+  
+  padding: 10px;
+  text-decoration: none;
+  list-style: none;
+  color: aliceblue;
+ 
+}
+
+.logoContainer {
+  margin-left: 15px;
+  color: aliceblue;
+  align-self: center;
+}
+
+.itemContainer{
+  display: flex;
+  align-self: center;
+}
+
+.loginButton a {
+  color: #fff;
+}
