@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
-import style from "./style.module.css"
+import style from "./style/style.module.css"
 
 const LoginForm = () => {
 	const { handleClose, open, login } = useContext(AuthContext)
@@ -35,7 +35,7 @@ const LoginForm = () => {
 		<Box component='form'>
 			<Grid container>
 				<Grid item>
-					<Typography>Login</Typography>
+					<Typography variant='h5'>Login</Typography>
 				</Grid>
 				<Grid item>
 					<TextField

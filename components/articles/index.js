@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ArticleList from "./ArticleList"
 import Pagination from "@mui/material/Pagination"
-import Loading from "../Loading"
+import Loading from "../Loading/Loading"
 import cardStyle from "./styles/cardStyle.module.css"
 
 const ArticleIndex = ({ articles }) => {

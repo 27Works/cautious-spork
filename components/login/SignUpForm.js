@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Box, Button, Grid, TextField, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
-import style from "./style.module.css"
+import style from "./style/style.module.css"
 
 const SignUpForm = () => {
 	const { handleClose, open, signUp } = useContext(AuthContext)
@@ -42,7 +42,7 @@ const SignUpForm = () => {
 		<Box component='form'>
 			<Grid container>
 				<Grid item>
-					<Typography>Sign Up</Typography>
+					<Typography variant='h5'>Sign Up</Typography>
 				</Grid>
 				<Grid item>
 					<TextField

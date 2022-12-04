@@ -1,10 +1,10 @@
 import { getData } from "../../helper"
-import Loading from "../../components/Loading"
+import Loading from "../../components/Loading/Loading"
 import { useEffect, useState, useContext } from "react"
-import { Button, Container, Box, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { useRouter } from "next/router"
-
 import AuthContext from "../../context/AuthContext"
+import style from "../../styles/style.module.css"
 
 export const getStaticPaths = async () => {
 	const data = await getData()
@@ -26,7 +26,7 @@ export const getStaticProps = async (context) => {
 }
 
 const ArticleDetails = ({ article }) => {
-	console.log(article)
+	// console.log(article)
 	const router = useRouter()
 	const { currentUser } = useContext(AuthContext)
 	const { title, sections } = article
@@ -47,26 +47,26 @@ const ArticleDetails = ({ article }) => {
 	return loading === true && article !== undefined ? (
 		<Loading />
 	) : (
-		<div>
-			<Container>
-				<Typography variant='h4'>{title}</Typography>
-				<br />
-				{article.author.map((author, index) => {
-					return (
-						<Typography key={index} variant='subtitle1'>
-							By: {author.firstName} {author.lastName}
-						</Typography>
-					)
-				})}
-				<br />
-				{sections.map((section, index) => {
-					return section.body ? (
-						<Box key={index} sx={{ margin: "35px" }}>
-							{section.body}
-						</Box>
-					) : null
-				})}
-			</Container>
+		<div className={style.container}>
+			{/* <Container> */}
+			<Typography variant='h4'>{title}</Typography>
+			<br />
+			{article.author.map((author, index) => {
+				return (
+					<Typography key={index} variant='subtitle1'>
+						By: {author.firstName} {author.lastName}
+					</Typography>
+				)
+			})}
+			<br />
+			{sections.map((section, index) => {
+				return section.body ? (
+					<Box key={index} sx={{ margin: "35px" }}>
+						{section.body}
+					</Box>
+				) : null
+			})}
+			{/* </Container> */}
 		</div>
 	)
 }

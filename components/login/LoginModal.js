@@ -9,7 +9,7 @@ import {
 	Typography,
 } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
-import style from "./style.module.css"
+import style from "./style/style.module.css"
 import LoginForm from "./LoginForm"
 import SignUpForm from "./signUpForm"
 
@@ -20,7 +20,8 @@ const LoginModal = () => {
 	return (
 		<Modal open={open} onClose={handleClose}>
 			<Box className={style.modalContainer}>
-				<Grid>
+				<Grid item>{createOrLogin ? <SignUpForm /> : <LoginForm />}</Grid>
+				<Grid container>
 					{createOrLogin ? (
 						<>
 							<Typography>
@@ -41,7 +42,6 @@ const LoginModal = () => {
 						</>
 					)}
 				</Grid>
-				<Grid item>{createOrLogin ? <SignUpForm /> : <LoginForm />}</Grid>
 			</Box>
 		</Modal>
 	)

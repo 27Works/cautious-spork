@@ -9,15 +9,12 @@ const Header = () => {
 	return (
 		<div className={headerStyle.headerContainer}>
 			<div className={headerStyle.logoContainer}>
-				<h2>27Works Demo</h2>
+				<Link href='/'>
+					<h2>27Works Demo</h2>
+				</Link>
 			</div>
 			<div className={headerStyle.itemContainer}>
 				<ul className={headerStyle.items}>
-					<li>
-						<Link href='/'>
-							<Typography>Home</Typography>
-						</Link>
-					</li>
 					{currentUser ? (
 						<li>
 							<Typography>Welcome {`${currentUser.email}`}</Typography>
