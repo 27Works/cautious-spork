@@ -1,6 +1,10 @@
 import { getData } from "../../helper"
 import Loading from "../../components/Loading"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { Button, Container, Box, Typography } from "@mui/material"
+import { useRouter } from "next/router"
+
+import AuthContext from "../../context/AuthContext"
 
 export const getStaticPaths = async () => {
 	const data = await getData()
@@ -22,8 +26,17 @@ export const getStaticProps = async (context) => {
 }
 
 const ArticleDetails = ({ article }) => {
+	console.log(article)
+	const router = useRouter()
+	const { currentUser } = useContext(AuthContext)
 	const { title, sections } = article
 	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		if (!currentUser && article.subscriberOnly === true) {
+			router.push("/")
+		}
+	}, [currentUser])
 
 	useEffect(() => {
 		if (article) {
@@ -35,9 +48,25 @@ const ArticleDetails = ({ article }) => {
 		<Loading />
 	) : (
 		<div>
-			<div>{title}</div>
-			<br />
-			<div>{sections[3].body}</div>
+			<Container>
+				<Typography variant='h4'>{title}</Typography>
+				<br />
+				{article.author.map((author, index) => {
+					return (
+						<Typography key={index} variant='subtitle1'>
+							By: {author.firstName} {author.lastName}
+						</Typography>
+					)
+				})}
+				<br />
+				{sections.map((section, index) => {
+					return section.body ? (
+						<Box key={index} sx={{ margin: "35px" }}>
+							{section.body}
+						</Box>
+					) : null
+				})}
+			</Container>
 		</div>
 	)
 }

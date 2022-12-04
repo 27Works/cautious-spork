@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import Link from "next/link"
 import headerStyle from "./style/headerStyle.module.css"
 import { Button, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
@@ -12,10 +13,14 @@ const Header = () => {
 			</div>
 			<div className={headerStyle.itemContainer}>
 				<ul className={headerStyle.items}>
-					<li>Home</li>
+					<li>
+						<Link href='/'>
+							<Typography>Home</Typography>
+						</Link>
+					</li>
 					{currentUser ? (
 						<li>
-							<Typography>Welcome {`${currentUser}`}</Typography>
+							<Typography>Welcome {`${currentUser.email}`}</Typography>
 						</li>
 					) : null}
 					<li>

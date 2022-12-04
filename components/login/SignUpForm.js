@@ -41,7 +41,6 @@ const SignUpForm = () => {
 	return (
 		<Box component='form'>
 			<Grid container>
-				{/* <Grid container className={style.modalContainer}> */}
 				<Grid item>
 					<Typography>Sign Up</Typography>
 				</Grid>

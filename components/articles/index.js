@@ -3,7 +3,6 @@ import ArticleList from "./ArticleList"
 import Pagination from "@mui/material/Pagination"
 import Loading from "../Loading"
 import cardStyle from "./styles/cardStyle.module.css"
-import LoginModal from "../login/LoginModal"
 
 const ArticleIndex = ({ articles }) => {
 	const [loading, setLoading] = useState(true)
