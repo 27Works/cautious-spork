@@ -8,7 +8,7 @@ const ArticleList = ({ articles, loggedIn }) => {
 				articles?.map((article, index) => {
 					return (
 						<div key={index} className={cardStyle.articleContainer}>
-							<ArticleItem article={article} loggedIn={loggedIn} />
+							<ArticleItem article={article} />
 						</div>
 					)
 				})}

@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import headerStyle from "./style/headerStyle.module.css"
-import Button from "@mui/material/Button"
+import { Button, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
 
 const Header = () => {
@@ -13,7 +13,11 @@ const Header = () => {
 			<div className={headerStyle.itemContainer}>
 				<ul className={headerStyle.items}>
 					<li>Home</li>
-					<li>About</li>
+					{currentUser ? (
+						<li>
+							<Typography>Welcome {`${currentUser}`}</Typography>
+						</li>
+					) : null}
 					<li>
 						{currentUser ? (
 							<Button color='primary' variant='outlined' onClick={logOut}>

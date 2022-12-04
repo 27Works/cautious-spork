@@ -14,7 +14,6 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }) => {
-	console.log("auth", auth)
 	const [open, setOpen] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [currentUser, setCurrentUser] = useState()

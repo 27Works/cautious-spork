@@ -5,9 +5,7 @@ import Loading from "../Loading"
 import cardStyle from "./styles/cardStyle.module.css"
 import LoginModal from "../login/LoginModal"
 
-const ArticleIndex = ({ articles, loggedIn }) => {
-	// const [articles, setArticles] = useState([])
-	// const [error, setError] = useState(false)
+const ArticleIndex = ({ articles }) => {
 	const [loading, setLoading] = useState(true)
 	const [currentPage, setCurrentPage] = useState(1)
 	const [articlesPerPage, setArticlesPerPage] = useState(10)
@@ -27,7 +25,6 @@ const ArticleIndex = ({ articles, loggedIn }) => {
 			setLoading(false)
 		}
 	}, [articles])
-	console.log(articles)
 
 	return (
 		<div>
@@ -37,8 +34,8 @@ const ArticleIndex = ({ articles, loggedIn }) => {
 					<Loading />
 				) : (
 					<>
-						<LoginModal />
-						<ArticleList articles={currentArticles} loggedIn={loggedIn} />
+						{/* <LoginModal /> */}
+						<ArticleList articles={currentArticles} />
 						<Pagination
 							className={cardStyle.pagination}
 							count={Math.ceil(articles.results.length / articlesPerPage)}

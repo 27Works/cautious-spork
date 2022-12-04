@@ -5,8 +5,6 @@ import styles from "../styles/Home.module.css"
 import ArticleIndex from "../components/articles"
 
 export default function Home({ articles }) {
-	const [loggedIn, setLoggedIn] = useState(false)
-
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -15,7 +13,7 @@ export default function Home({ articles }) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<ArticleIndex loggedIn={loggedIn} articles={articles} />
+			<ArticleIndex articles={articles} />
 		</div>
 	)
 }
