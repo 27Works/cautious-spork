@@ -29,10 +29,10 @@
 .articleDesc {
   font-size: 15px;
 } */
-/* .listContainer {
+.listContainer {
   display: flex;
   flex-direction: column;
-} */
+}
 
 .imageContainer {
   width: 200px;
@@ -43,6 +43,7 @@
 .articleContainer {
   display: flex;
   justify-content: center;
+
 }
 
 .buttonContainer {

@@ -3,6 +3,8 @@
   justify-content: space-between;
   height: 90px;
   background-color: black;
+  position: fixed;
+  width: 100%;
 }
 
 .items {
@@ -12,14 +14,16 @@
 }
 .items li {
   align-self: center;
-  
   padding: 10px;
   text-decoration: none;
   list-style: none;
   color: aliceblue;
  
 }
-
+.items a {
+  text-decoration: none;
+  color: #fff;
+}
 .logoContainer {
   margin-left: 15px;
   color: aliceblue;

@@ -21,8 +21,8 @@ const ArticleItem = ({ article }) => {
 	// console.log(currentUser)
 	return (
 		<Box className={cardStyle.articleCard}>
-			<Grid spacing={2} container columns={2}>
-				<Grid item xs>
+			<Grid container>
+				<Grid item xs={6}>
 					{sections[0].image[0].url ? (
 						<Image
 							className={cardStyle.imageContainer}
@@ -33,17 +33,21 @@ const ArticleItem = ({ article }) => {
 						/>
 					) : null}
 				</Grid>
-				<Grid container xs>
-					<Typography variant='h5'>{title}</Typography>
+				<Grid container item xs={6}>
 					<Grid
 						container
 						direction='column'
 						justifyContent='space-between'
-						alignItems='flex-end'>
-						<Grid item>
+						alignItems='flex-start'>
+						<Grid item xs={3}>
+							<Grid container>
+								<Typography variant='h5'>{title}</Typography>
+							</Grid>
+						</Grid>
+						<Grid item xs={3}>
 							<Typography>{metaDescription}</Typography>
 						</Grid>
-						<Grid item>
+						<Grid container item justifyContent='flex-end'>
 							{subscriberOnly ? (
 								subscriberOnly && currentUser ? (
 									<Button variant='contained' className={cardStyle.button}>

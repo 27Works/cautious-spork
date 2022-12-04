@@ -26,9 +26,9 @@ const ArticleIndex = ({ articles }) => {
 	}, [articles])
 
 	return (
-		<div>
+		<div className={cardStyle.listContainer}>
 			<h1>Articles:</h1>
-			<div className={cardStyle.listContainer}>
+			<div>
 				{loading && articles ? (
 					<Loading />
 				) : (
