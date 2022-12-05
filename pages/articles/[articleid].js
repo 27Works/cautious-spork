@@ -28,7 +28,6 @@ export const getStaticProps = async (context) => {
 
 const ArticleDetails = ({ article }) => {
 	const router = useRouter()
-	console.log(router)
 	const { currentUser } = useContext(AuthContext)
 	const { title, sections } = article
 	const [loading, setLoading] = useState(true)
@@ -66,10 +65,10 @@ const ArticleDetails = ({ article }) => {
 				<br />
 				{sections.map((section, index) => {
 					return section.body ? (
-						<>
-							<Typography key={index}>{section.body}</Typography>
+						<div key={index}>
+							<Typography>{section.body}</Typography>
 							<br />
-						</>
+						</div>
 					) : null
 				})}
 			</div>

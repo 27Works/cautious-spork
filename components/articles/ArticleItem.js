@@ -6,19 +6,10 @@ import { Button, Grid, Box, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
 
 const ArticleItem = ({ article }) => {
-	const {
-		_id,
-		author,
-		created,
-		slug,
-		title,
-		subscriberOnly,
-		sections,
-		metaDescription,
-	} = article
+	const { slug, title, subscriberOnly, sections, metaDescription } = article
 
 	const { currentUser, handleOpen } = useContext(AuthContext)
-	// console.log(currentUser)
+
 	return (
 		<Box className={cardStyle.articleCard}>
 			<Grid container>
@@ -39,12 +30,12 @@ const ArticleItem = ({ article }) => {
 						direction='column'
 						justifyContent='space-between'
 						alignItems='flex-start'>
-						<Grid item xs={3}>
+						<Grid item xs>
 							<Grid container>
 								<Typography variant='h5'>{title}</Typography>
 							</Grid>
 						</Grid>
-						<Grid item xs={3}>
+						<Grid item xs overflow='hidden'>
 							<Typography>{metaDescription}</Typography>
 						</Grid>
 						<Grid container item justifyContent='flex-end'>

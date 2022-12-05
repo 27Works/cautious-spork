@@ -33,7 +33,6 @@ const ArticleIndex = ({ articles }) => {
 					<Loading />
 				) : (
 					<>
-						{/* <LoginModal /> */}
 						<ArticleList articles={currentArticles} />
 						<Pagination
 							className={cardStyle.pagination}
