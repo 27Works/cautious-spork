@@ -1,4 +1,17 @@
 .container {
+  display: flex;
   padding-top: 100px;
   padding-bottom: 50px;
+}
+
+.articleContent {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.backButton {
+  margin-top: 10px;
+  margin-left: 10px;
+  color: black;
 }

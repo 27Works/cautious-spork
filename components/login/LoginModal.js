@@ -1,13 +1,5 @@
 import { useContext, useState } from "react"
-import {
-	Box,
-	Button,
-	Card,
-	Grid,
-	Modal,
-	TextField,
-	Typography,
-} from "@mui/material"
+import { Box, Button, Grid, Modal, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
 import style from "./style/style.module.css"
 import LoginForm from "./LoginForm"

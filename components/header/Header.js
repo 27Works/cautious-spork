@@ -22,11 +22,17 @@ const Header = () => {
 					) : null}
 					<li>
 						{currentUser ? (
-							<Button color='primary' variant='outlined' onClick={logOut}>
+							<Button
+								className={headerStyle.items}
+								variant='outlined'
+								onClick={logOut}>
 								Logout
 							</Button>
 						) : (
-							<Button color='primary' variant='outlined' onClick={handleOpen}>
+							<Button
+								className={headerStyle.items}
+								variant='outlined'
+								onClick={handleOpen}>
 								Login
 							</Button>
 						)}
