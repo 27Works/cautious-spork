@@ -2,6 +2,7 @@ import { useContext } from "react"
 import Link from "next/link"
 import headerStyle from "./style/headerStyle.module.css"
 import { Button, Typography } from "@mui/material"
+import { CustomButton2 } from "../CustomButton/CustomButton"
 import AuthContext from "../../context/AuthContext"
 
 const Header = () => {
@@ -22,19 +23,17 @@ const Header = () => {
 					) : null}
 					<li>
 						{currentUser ? (
-							<Button
-								className={headerStyle.items}
-								variant='outlined'
+							<CustomButton2
+								className={headerStyle.loginButton}
 								onClick={logOut}>
 								Logout
-							</Button>
+							</CustomButton2>
 						) : (
-							<Button
-								className={headerStyle.items}
-								variant='outlined'
+							<CustomButton2
+								className={headerStyle.loginButton}
 								onClick={handleOpen}>
 								Login
-							</Button>
+							</CustomButton2>
 						)}
 					</li>
 				</ul>

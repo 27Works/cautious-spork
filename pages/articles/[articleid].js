@@ -6,6 +6,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
 import { useRouter } from "next/router"
 import AuthContext from "../../context/AuthContext"
 import style from "./style/style.module.css"
+import { CustomButton } from "../../components/CustomButton/CustomButton"
 
 export const getStaticPaths = async () => {
 	const data = await getData()
@@ -46,11 +47,11 @@ const ArticleDetails = ({ article }) => {
 	) : (
 		<div className={style.container}>
 			<div>
-				<Button
+				<CustomButton
 					className={style.backButton}
 					onClick={() => router.replace("/")}>
 					<ArrowBackIosIcon />
-				</Button>
+				</CustomButton>
 			</div>
 			<div className={style.articleContent}>
 				<Typography variant='h4'>{title}</Typography>

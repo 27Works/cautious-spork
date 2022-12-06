@@ -4,6 +4,7 @@ import { useContext } from "react"
 import cardStyle from "./styles/cardStyle.module.css"
 import { Button, Grid, Box, Typography } from "@mui/material"
 import AuthContext from "../../context/AuthContext"
+import { CustomButton2 } from "../CustomButton/CustomButton"
 
 const ArticleItem = ({ article }) => {
 	const { slug, title, subscriberOnly, sections, metaDescription } = article
@@ -41,20 +42,24 @@ const ArticleItem = ({ article }) => {
 						<Grid container item justifyContent='flex-end'>
 							{subscriberOnly ? (
 								subscriberOnly && currentUser ? (
-									<Button variant='contained' className={cardStyle.button}>
+									<CustomButton2
+										variant='contained'
+										className={cardStyle.button}>
 										<Link href={`articles/${slug}`}>ReadMore</Link>
-									</Button>
+									</CustomButton2>
 								) : (
-									<Button variant='contained' className={cardStyle.button}>
+									<CustomButton2
+										variant='contained'
+										className={cardStyle.button}>
 										<Typography variant='body2' onClick={handleOpen}>
 											Login to ReadMore
 										</Typography>
-									</Button>
+									</CustomButton2>
 								)
 							) : (
-								<Button variant='contained' className={cardStyle.button}>
+								<CustomButton2 variant='contained' className={cardStyle.button}>
 									<Link href={`articles/${slug}`}>ReadMore</Link>
-								</Button>
+								</CustomButton2>
 							)}
 						</Grid>
 					</Grid>
