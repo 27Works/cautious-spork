@@ -2,12 +2,14 @@
   display: flex;
   padding-top: 100px;
   padding-bottom: 50px;
+  justify-content: center;
 }
 
 .articleContent {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  max-width: 750px;
 }
 
 .backButton {

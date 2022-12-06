@@ -5,7 +5,7 @@ import { Button, Typography } from "@mui/material"
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
 import { useRouter } from "next/router"
 import AuthContext from "../../context/AuthContext"
-import style from "../../styles/style.module.css"
+import style from "./style/style.module.css"
 
 export const getStaticPaths = async () => {
 	const data = await getData()
