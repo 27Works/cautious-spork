@@ -1,0 +1,58 @@
+.articleCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.2em;
+  padding: 10px;
+  width: 600px;
+  height: 250px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(156, 156, 156);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.articleCard:hover {
+  background-color: rgba(169, 169, 169, 0.195);
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.imageContainer {
+  width: 200px;
+  height: 200px;
+  margin-left: 10px;
+}
+
+.articleContainer {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 12px;
+}

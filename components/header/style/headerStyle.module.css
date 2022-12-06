@@ -1,0 +1,50 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.items {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+
+}
+.items:hover {
+  color: darkgray;
+}
+.items li {
+  align-self: center;
+  padding: 10px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.logoContainer {
+  margin-left: 15px;
+  align-self: center;
+}
+
+
+.logoContainer a {
+  text-decoration: none;
+  color: #fff;
+}
+.logoContainer a:hover {
+  text-decoration: none;
+  color: darkgray;
+}
+
+.itemContainer{
+  display: flex;
+  align-self: center;
+}
+
+.loginButton a {
+  color: #fff;
+}

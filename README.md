@@ -35,7 +35,6 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImppbSIsImFjY2Vzc1R5cGUiOiJ
 
 ```js
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImppbSIsImFjY2Vzc1R5cGUiOiJhZG1pbiIsImlhdCI6MTY1MjA4ODA3OCwiZXhwIjozNTEyMDg4MDc4fQ.gwexr1yGgTvDMjUGPQ2-dZxXoU7XhcSbgVw1NcU8Tb0'
-
 const response = await fetch('https://noble-rot-api.27.works/1.0/posts', {
   method: 'GET',
   headers: {
@@ -43,7 +42,6 @@ const response = await fetch('https://noble-rot-api.27.works/1.0/posts', {
     'Content-Type': 'application/json'
   }
 })
-
 const data = await response.json()
 console.log(data)
 ```
